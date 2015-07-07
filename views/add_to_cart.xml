@@ -1,0 +1,17 @@
+<openerp>
+    <data>
+        <!-- 
+        Hide the Add to Cart button. The wrapper div also hides the +/- buttons
+        FIXME: is there a less hacky way to achieve this without breaking 
+        the website_sale.product_quantity template that adds the +/- buttons?
+        -->
+        <template id="product" name="product_inherit" inherit_id="website_sale.product">
+            <xpath expr="//a[@id='add_to_cart']" position="replace">
+                <div t-if="0==1">
+                    <a id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
+                </div>        
+            </xpath>            
+        </template>
+            
+    </data>
+</openerp>
